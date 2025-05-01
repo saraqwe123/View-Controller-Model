@@ -1,7 +1,6 @@
 
 const db = require("../config/database");
 const md5 = require('md5');
-const { criarUsuario } = require("../controller/usuario.controller");
 
 
 

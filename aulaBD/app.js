@@ -35,7 +35,7 @@ app.post('/cadastrarUsuario', function(req, res){
 
 });
 
-app.post('/desativar', usuarioController.validandoDesativacao);
+app.get('/desativar', (req, res) => usuarioController.validandoDesativacao());
 
 
 app.listen(port, () => {
