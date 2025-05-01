@@ -3,11 +3,12 @@ const db = require("../config/database");
 const md5 = require('md5');
 const { criarUsuario } = require("../controller/usuario.controller");
 
-exports.listarUsuarios = async function(){
-    const {rows} = await db.query("SELECT * FROM usuario WHERE isativo = true");
-    return rows;
-}
 
+
+exports.listarUsuarios = async function(){
+    const {rows} = await db.query("SELECT * FROM usuario WHERE isAtivo = true")
+    return rows
+}
 
 exports.criarUsuario = async function(novo_usuario){
     const resposta = await db.query(
@@ -26,3 +27,12 @@ exports.ProcuraUsername = async function(novo_usuario){
     )
     return rows
 } 
+
+exports.desativarUsuario = async function(nome, username) {
+    const { rows } = await db.query(
+      `UPDATE usuario SET isativo = false WHERE nome = $1 AND username = $2`,
+      [nome, username]
+    );
+    return "Usuario desativado com sucesso";
+  }
+  

@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.get('/listarUsuarios', function(req, res){
+  
   const resultado = usuarioController.listarUsuarios();
   resultado.then(resp => {res.render('listagemUsuarios', {resp})});
 });
@@ -32,8 +33,10 @@ app.post('/cadastrarUsuario', function(req, res){
 
   resultado.then(resp => {resp ? res.redirect('/listarUsuarios') : res.render('cadastroUsuario', {usuario: novo_usuario, mensagem: "erro: Username deve ter entre 5 a 10 caracteres!"} )})
 
-
 });
+
+app.post('/desativar', usuarioController.validandoDesativacao);
+
 
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}...`);

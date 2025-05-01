@@ -13,3 +13,16 @@ exports.criarUsuario = async function(novo_usuario){
     };
     return false;
 };''
+
+exports.validandoDesativacao = async function(req, res) {
+    const { nome, username } = req.body; 
+
+    if (usuarioRN.IsDesativar(nome, username)) { 
+        await usuarioDAO.desativarUsuario(nome, username);
+        res.redirect('/listarUsuarios');
+        return true;
+    }
+    return false;
+};
+
+

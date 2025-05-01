@@ -33,3 +33,7 @@ exports.IsUsername = function(username) {
     } 
     return false
 }
+
+exports.IsDesativar = function(nome, username) {
+    return nome && username
+}
