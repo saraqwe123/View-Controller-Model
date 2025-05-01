@@ -28,11 +28,11 @@ exports.ProcuraUsername = async function(novo_usuario){
     return rows
 } 
 
-exports.desativarUsuario = async function(nome, username) {
-    const { rows } = await db.query(
-      `UPDATE usuario SET isativo = false WHERE nome = $1 AND username = $2`,
-      [nome, username]
-    );
-    return "Usuario desativado com sucesso";
-  }
+// exports.desativarUsuario = async function(nome, username) {
+//     const { rows } = await db.query(
+//       `UPDATE usuario SET isativo = false WHERE nome = $1 AND username = $2`,
+//       [nome, username]
+//     );
+//     return "Usuario desativado com sucesso";
+//   }
   

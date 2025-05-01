@@ -7,15 +7,15 @@
         <li>
             <h2>{{nome}}</h2>
             <p>{{username}}</p>
-            <button onclick="IsDesativar({{nome,username}})">Desativar Usuário</button>
+            [
         </li>
-            <form action="/desativar" method="POST">
+            {{!-- <form action="/desativar" method="POST">
           <input type="hidden" name="nome" value="{{nome}}">
           <input type="hidden" name="username" value="{{username}}">
                   <a href="/desativar/{{nome}}/{{username}}">
           Desativar Usuário
         </a>
-        </form>
+        </form> --}}
 
         {{/each}}
     </ul>
