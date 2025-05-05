@@ -45,12 +45,6 @@ app.post('/desativar/:username', function(req, res){
 })
 
 
-app.post('/desativar', usuarioController.validandoDesativacao);
-
-app.get('/desativar', (req, res) => usuarioController.validandoDesativacao());
-
-
-
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}...`);
 });
