@@ -3,10 +3,9 @@ const db = require("../config/database");
 const md5 = require('md5');
 
 
-
-exports. listarUsuarios = async function(){
-    const {rows} = await db.query("SELECT * FROM usuario WHERE isativo = true")
-    return rows
+exports.listarUsuarios = async function(){
+    const {rows} = await db.query("SELECT * FROM usuario WHERE isativo = true");
+    return rows;
 }
 
 exports.criarUsuario = async function(novo_usuario){
