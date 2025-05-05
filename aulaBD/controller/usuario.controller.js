@@ -14,17 +14,10 @@ exports.criarUsuario = async function(novo_usuario){
     return false;
 };''
 
-<<<<<<< HEAD
-exports.desativarUsuario = async function(req, res) {
+exports.desativar = async function(req, res) {
 
-    if (usuarioRN.IsDesativar(username)) { 
-        await usuarioDAO.desativarUsuario(username);
-=======
-exports.validandoDesativacao = async function(novo_usuario) {
-    let username = await usuarioDAO.ProcuraUsername(novo_usuario)
     if (usuarioRN.IsDesativar(nome, username)) { 
         await usuarioDAO.desativarUsuario(nome, username);
->>>>>>> 511eadf61e7fe28545db84c62e2aa234091df3aa
         res.redirect('/listarUsuarios');
         return true;
     }
