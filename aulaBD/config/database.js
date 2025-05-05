@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const pool = new Pool({
-  connectionString: 'postgres://postgres:postgres@localhost:5432/aulaDB'
+  connectionString: 'postgres://postgres:sara.sara@localhost:5432/aulaDB'
 });
 
 pool.on('connect', () => {
