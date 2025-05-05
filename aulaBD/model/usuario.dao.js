@@ -5,8 +5,8 @@ const { criarUsuario } = require("../controller/usuario.controller");
 
 
 
-exports.listarUsuarios = async function(){
-    const {rows} = await db.query("SELECT * FROM usuario WHERE isAtivo = true")
+exports. listarUsuarios = async function(){
+    const {rows} = await db.query("SELECT * FROM usuario WHERE isativo = true")
     return rows
 }
 
@@ -23,16 +23,15 @@ exports.criarUsuario = async function(novo_usuario){
 
 exports.ProcuraUsername = async function(novo_usuario){
     const {rows} = await db.query(
-    `SELECT username FROM usuario WHERE username = ${novo_usuario.username}`
+    `SELECT username FROM usuario WHERE username = '${novo_usuario.username}'`
     )
     return rows
 } 
 
-// exports.desativarUsuario = async function(nome, username) {
-//     const { rows } = await db.query(
-//       `UPDATE usuario SET isativo = false WHERE nome = $1 AND username = $2`,
-//       [nome, username]
-//     );
-//     return "Usuario desativado com sucesso";
-//   }
+exports.desativarUsuario = async function(usuario) {
+    const { rows } = await db.query(
+      `UPDATE usuario SET isativo = false WHERE username = '${usuario.username}'`
+    );
+    return "Usuario desativado com sucesso";
+  }
   

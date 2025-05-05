@@ -14,15 +14,14 @@ exports.criarUsuario = async function(novo_usuario){
     return false;
 };''
 
-// exports.validandoDesativacao = async function(req, res) {
-//     const { nome, username } = req.body; 
+exports.desativarUsuario = async function(req, res) {
 
-//     if (usuarioRN.IsDesativar(nome, username)) { 
-//         await usuarioDAO.desativarUsuario(nome, username);
-//         res.redirect('/listarUsuarios');
-//         return true;
-//     }
-//     return false;
-// };
+    if (usuarioRN.IsDesativar(username)) { 
+        await usuarioDAO.desativarUsuario(username);
+        res.redirect('/listarUsuarios');
+        return true;
+    }
+    return false;
+};
 
 

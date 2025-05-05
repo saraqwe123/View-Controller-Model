@@ -35,7 +35,17 @@ app.post('/cadastrarUsuario', function(req, res){
 
 });
 
-//app.post('/desativar', usuarioController.validandoDesativacao);
+app.post('/desativar/:username', function(req, res){
+  const usuario = req.params.username
+  const resultado = usuarioController.desativarUsuario(usuario)
+
+  resultado.then(res => {resp ? res.redirect('/listarUsuarios') : res.render('desativar',
+    {usuario: usuario, mensagem: "erro: Não foi possível desativar usuário"}
+  )})
+})
+
+
+app.post('/desativar', usuarioController.validandoDesativacao);
 
 
 app.listen(port, () => {

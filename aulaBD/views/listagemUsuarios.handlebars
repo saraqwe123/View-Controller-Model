@@ -7,16 +7,10 @@
         <li>
             <h2>{{nome}}</h2>
             <p>{{username}}</p>
-            [
+            <a href="/desativar/{{username}}">
+            Desativar Usuário
+            </a>
         </li>
-            {{!-- <form action="/desativar" method="POST">
-          <input type="hidden" name="nome" value="{{nome}}">
-          <input type="hidden" name="username" value="{{username}}">
-                  <a href="/desativar/{{nome}}/{{username}}">
-          Desativar Usuário
-        </a>
-        </form> --}}
-
         {{/each}}
     </ul>
 {{else}}
