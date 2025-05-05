@@ -35,6 +35,7 @@ app.post('/cadastrarUsuario', function(req, res){
 
 });
 
+<<<<<<< HEAD
 app.post('/desativar/:username', function(req, res){
   const usuario = req.params.username
   const resultado = usuarioController.desativarUsuario(usuario)
@@ -46,6 +47,9 @@ app.post('/desativar/:username', function(req, res){
 
 
 app.post('/desativar', usuarioController.validandoDesativacao);
+=======
+app.get('/desativar', (req, res) => usuarioController.validandoDesativacao());
+>>>>>>> 511eadf61e7fe28545db84c62e2aa234091df3aa
 
 
 app.listen(port, () => {
