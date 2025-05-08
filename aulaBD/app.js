@@ -39,11 +39,10 @@ app.post('/desativar/:username', function(req, res){
   const usuario = req.params.username
   const resultado = usuarioController.desativarUsuario(usuario)
 
-  resultado.then(res => {resp ? res.redirect('/listarUsuarios') : res.render('desativar',
+  resultado.then(resp => {resp ? res.redirect('/listarUsuarios') : res.render('desativar',
     {usuario: usuario, mensagem: "erro: Não foi possível desativar usuário"}
   )})
 })
-
 
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}...`);
