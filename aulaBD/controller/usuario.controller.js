@@ -9,6 +9,7 @@ exports.criarUsuario = async function(novo_usuario){
     if(usuarioRN.validarUsername(novo_usuario.username) && usuarioRN.IsUsername(novo_usuario)){
 
         await usuarioDAO.criarUsuario(novo_usuario);
+        
         return true;
     };
     return false;
@@ -16,8 +17,8 @@ exports.criarUsuario = async function(novo_usuario){
 
 exports.desativar = async function(req, res) {
 
-    if (usuarioRN.IsDesativar(nome, username)) { 
-        await usuarioDAO.desativarUsuario(nome, username);
+    if (usuarioRN.IsDesativar(username)) { 
+        await usuarioDAO.desativarUsuario(username);
         res.redirect('/listarUsuarios');
         return true;
     }
